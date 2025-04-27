@@ -14,6 +14,27 @@ int main(){
     va = 464; // vale alimentacao
     
     
+    while(true){
+        afirmacao = 0;
+        printf("\nVt? \n");
+        printf("[1] S ");
+        printf("[2] N\n");
+        scanf("%d", &afirmacao);
+        if (afirmacao == 1){
+            break;
+        }    
+        if (afirmacao == 2){
+            vt = 0;
+            break;
+        }
+        else{
+        printf("Opcao inválida! Tente novamente\n");
+        }
+    }
+    
+    
+    
+    
      // sindicato com opção para o usuário contribuir ou não
     while (true){
         c_sindicato = 0;
