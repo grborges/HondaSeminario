@@ -3,27 +3,27 @@
 
 int main(){
     
-    float base_irpf, salario_liquido, inss, irpf, salario_base, vt, va, c_sindicato, base_calc;
+    float base_irpf, salario_liquido, inss, irpf, c_sindicato, salario_base, vt, va, base_calc;
     
     int afirmacao;
     
-    
-    salario_base = 0;
+    printf("Escreva o seu salario sem acrescimos: ");
+    salario_base = 4500;
     scanf("%f", &salario_base);
     vt = salario_base * 6 / 100; //vale transporte
     va = 464; // vale alimentacao
     
     
     while(true){
-        afirmacao = 0;
-        printf("\nVt? \n");
-        printf("[1] S ");
-        printf("[2] N\n");
+         afirmacao = 0;
+        printf("\nQuer receber o vale transporte? \n");
+        printf("[1] Para sim\n");
+        printf("[2] Para não\n");
         scanf("%d", &afirmacao);
         if (afirmacao == 1){
             break;
         }    
-        if (afirmacao == 2){
+        if (afirmacao == 2){\
             vt = 0;
             break;
         }
@@ -32,16 +32,13 @@ int main(){
         }
     }
     
-    
-    
-    
-     // sindicato com opção para o usuário contribuir ou não
+    // sindicato com opção para o usuário contribuir ou não
     while (true){
         c_sindicato = 0;
         afirmacao = 0;
-        printf("\nsindicato?\n");
-        printf("[1] S ");
-        printf("[2] N\n");
+        printf("\nGostaria de contribuir com o sindicato?\n");
+        printf("[1] Para sim\n");
+        printf("[2] Para não\n");
         scanf("%d", &afirmacao);
         if (afirmacao == 1){
             c_sindicato = salario_base / 30;
@@ -51,11 +48,17 @@ int main(){
             break;
         }
         else{
-        printf("Opcao errada \n");
+        printf("Opcao inválida! Tente novamente\n");
         }
     }  
-    
-    
+ 
+ 
+ 
+    salario_liquido = 0;
+ 
+    printf("\n");
+    printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=");
+    printf("\n");
     
     
     // Inss
@@ -76,39 +79,33 @@ int main(){
     if (salario_base > 4190.86){
         inss = (salario_base * 14 / 100) - 190.40;
     }
-    
-    
-    
-    // irpf
-    
-    base_irpf = salario_base - inss;
-    
-    if (base_irpf > 2259.80 && base_irpf <= 2826.65){
+   
+   // irpf
+   
+   base_irpf = salario_base - inss;
+   
+   if (base_irpf > 2259.80 && base_irpf <= 2826.65){
         irpf =  (base_irpf* 7.5 / 100) - 169.44 ;
-    }
-    
-    if (base_irpf > 2826.65 && base_irpf <= 3751.05){
+   }
+   
+   if (base_irpf > 2826.65 && base_irpf <= 3751.05){
        irpf = (base_irpf* 15 / 100) - 381.44;
-    }
-    
-    if (base_irpf > 3751.05 && base_irpf <= 4664.68){
+   }
+   
+   if (base_irpf > 3751.05 && base_irpf <= 4664.68){
        irpf = (base_irpf* 22.5 / 100) - 662.77;
-    }
+   }
     
-    if (base_irpf > 4664.68){
+   if (base_irpf > 4664.68){
        irpf = (base_irpf * 27.5 / 100) - 896.00;
-    }
-    
-    
+   }
     
     //Calculo final
     
-    salario_liquido = salario_base - vt - inss - irpf - c_sindicato;
-    if(salario_liquido < 1518.00){
+  salario_liquido = salario_base - vt - inss - irpf - c_sindicato;
+  if(salario_liquido < 1518.00){
       salario_liquido = 1518;
-    }
-    
-    
+  }
     
     
     
@@ -135,8 +132,4 @@ int main(){
     
     printf("Salario liquido: %.2f\n", salario_liquido);
     return 0;
-    
-    
-    
-    
 }
