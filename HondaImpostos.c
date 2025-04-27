@@ -110,10 +110,31 @@ int main(){
     
     
     
-    printf("inss -> %.2f\n", inss);
-    printf("irpf -> %.2f\n", irpf);
-    printf("salario base -> %.2f\n", salario_base);
-    printf("salario liquido -> %.2f\n", salario_liquido);
+    
+    
+    printf("Salario Bruto: %.2f\n", salario_base);
+    printf("Vale Alimentacao em forma de cartao: %.2f\n", va);
+    
+    if (vt == 0){
+        printf("Voce nao recebe Vale Transporte\n");
+    }
+    else{
+        printf("Vale Transporte: %.2f\n", vt);
+    }
+    
+    printf("Inss: %.2f\n", inss);
+    printf("irpf: %.2f\n", irpf);
+    
+    if (c_sindicato == 0){
+        printf("Voce Nao contribui para o Sindicato! \n");
+    }
+    else{
+    printf("A sua contribuicao com o Sindicato: %.2f\n", c_sindicato);
+    }
+    
+    
+    printf("Salario liquido: %.2f\n", salario_liquido);
+    return 0;
     
     
     
