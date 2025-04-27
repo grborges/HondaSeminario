@@ -3,14 +3,37 @@
 
 int main(){
     
-    float base_irpf, salario_liquido, inss, irpf, salario_base, vt, va, base_calc;
+    float base_irpf, salario_liquido, inss, irpf, salario_base, vt, va, c_sindicato, base_calc;
     
+    int afirmacao;
     
     
     salario_base = 0;
     scanf("%f", &salario_base);
     vt = salario_base * 6 / 100; //vale transporte
     va = 464; // vale alimentacao
+    
+    
+     // sindicato com opção para o usuário contribuir ou não
+    while (true){
+        c_sindicato = 0;
+        afirmacao = 0;
+        printf("\nsindicato?\n");
+        printf("[1] S ");
+        printf("[2] N\n");
+        scanf("%d", &afirmacao);
+        if (afirmacao == 1){
+            c_sindicato = salario_base / 30;
+            break;
+        }    
+        if (afirmacao == 2){
+            break;
+        }
+        else{
+        printf("Opcao errada \n");
+        }
+    }  
+    
     
     
     
@@ -59,7 +82,7 @@ int main(){
     
     //Calculo final
     
-    salario_liquido = salario_base - vt - inss - irpf;
+    salario_liquido = salario_base - vt - inss - irpf - c_sindicato;
     if(salario_liquido < 1518.00){
       salario_liquido = 1518;
     }
