@@ -1,3 +1,5 @@
+// Cálculo da folha salarial.
+
 #include <stdio.h>
 #include <stdbool.h>
 
