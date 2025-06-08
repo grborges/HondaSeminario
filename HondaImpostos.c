@@ -13,8 +13,8 @@ int main(){
     vt = salario_base * 6 / 100; //vale transporte
     va = 464; // vale alimentacao
     
-    
-    while(true){
+    // Confirmacao do recebimento do vale transporte
+    while(true){ 
          afirmacao = 0;
         printf("\nQuer receber o vale transporte? \n");
         printf("[1] Para sim\n");
@@ -61,7 +61,7 @@ int main(){
     printf("\n");
     
     
-    // Inss
+    // Cálculos do INSS de acordo com o valor ganho.
     if (salario_base <= 1518){
         inss = salario_base * 7.5 / 100;
     }
@@ -80,7 +80,7 @@ int main(){
         inss = (salario_base * 14 / 100) - 190.40;
     }
    
-   // irpf
+   // Cálculos do IRPF de acordo com o valor ganho.
    
    base_irpf = salario_base - inss;
    
